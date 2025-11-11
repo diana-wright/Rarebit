@@ -68,17 +68,24 @@ function writePage() {
     page = `<img alt="` + altText + `" title="` + altText + `" src="` + path + `" />`;
     return page;
   } else if (pgData.length >= pg) { //if the array is not blank, and if its at least long enough to have an entry for the current page
+    let thisPageData = pgData[pg - 1];
 
-    altText = pgData[pg - 1].altText; //set alt text to the text defined in the array
+    altText = thisPageData.altText; //set alt text to the text defined in the array
+    filename = thisPageData.filename;
+    if (!filename) {
+      filename = image + pg;
+    }
+    commonPath = (folder != "" ? folder + "/" : "") + filename;
 
-    if (pgData[pg-1].imageFiles > 1) { //if theres more than one page segment
-    for (let i = 1; i < pgData[pg-1].imageFiles+1; i++) { //for loop to put all the parts of the image on the webpage
+    if (thisPageData.imageFiles > 1) { //if theres more than one page segment
+    for (let i = 1; i < thisPageData.imageFiles+1; i++) { //for loop to put all the parts of the image on the webpage
       partExtension = imgPart + i.toString();
-      path = (folder != "" ? folder + "/" : "") + image + pg + partExtension + "." + ext; //reinit path (there has to be a less dumb way to do this)
+      path = commonPath + partExtension + "." + ext; //reinit path (there has to be a less dumb way to do this)
       if (i > 1) {page += `<br/>`} //add line break
       page += `<img alt="` + altText + `" title="` + altText + `" src="` + path + `" />`; //add page segment
       }
     } else {
+      path = commonPath + "." + ext;
       page = `<img alt="` + altText + `" title="` + altText + `" src="` + path + `" />`;
     }
     //debug
