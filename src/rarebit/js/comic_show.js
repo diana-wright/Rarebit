@@ -1,4 +1,4 @@
-//comic_show.js was created by geno7, with much needed assistance from Dannarchy
+//comic_show.js was created by diana wright, with much needed assistance from Dannarchy
 
 //this is the script that actually displays the comics, nav and comic title on the page. 
 

@@ -1,4 +1,4 @@
-//comic_archive.js was created by geno7
+//comic_archive.js was created by diana wright
 
 //Writing sections of the archive page involves 2 steps:
 //first, use the writeArchive function in this .js file. set the parameters (the stuff inside the parenthesis, comma separated) to toggle options.

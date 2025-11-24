@@ -1,4 +1,4 @@
-//comic_settings.js was created by geno7, with much needed assistance from Dannarchy
+//comic_settings.js was created by diana wright, with much needed assistance from Dannarchy
 
 //this is the main file you'll be messing with to manage and update your comic. most (not all) of the main toggle-able settings are here.
 
